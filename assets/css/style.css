@@ -1,0 +1,233 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+    body {
+        font-family: 'Poppins',
+            sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+
+    .image-thumbnail {
+        width: 150px;
+        height: 130px;
+        object-position: center;
+        object-fit: cover;
+    }
+
+    .view-img {
+        height: 450px;
+        object-fit: cover;
+    }
+
+    .sidepanel {
+        width: 0;
+        position: fixed;
+        z-index: 9;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: #ffff;
+        overflow-x: hidden;
+        transition: 0.2s;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    }
+
+    .sidepanel a:not(.navbar-brand, .closebtn) {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        transition: 0.3s;
+        font-family: "Public Sans", sans-serif;
+        color: #687A8D;
+    }
+
+    .sidepanel .closebtn {
+        font-size: 36px;
+    }
+
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        padding: 10px 15px;
+        border: none;
+    }
+
+    /* custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 20px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #d6dee1;
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #a8bbbf;
+    }
+
+
+    .carousel-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        height: 60px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel-indicators {
+        z-index: 2;
+    }
+
+
+    .switch {
+        font-size: 17px;
+        position: relative;
+        display: inline-block;
+        width: 64px;
+        height: 34px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #73C0FC;
+        transition: .4s;
+        border-radius: 30px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 30px;
+        width: 30px;
+        border-radius: 20px;
+        left: 2px;
+        bottom: 2px;
+        z-index: 2;
+        background-color: #e8e8e8;
+        transition: .4s;
+    }
+
+    .sun svg {
+        position: absolute;
+        top: 6px;
+        left: 36px;
+        z-index: 1;
+        width: 24px;
+        height: 24px;
+    }
+
+    .moon svg {
+        fill: #73C0FC;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        z-index: 1;
+        width: 24px;
+        height: 24px;
+    }
+
+    .home-img {
+        height: 600px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* .switch:hover */
+    .sun svg {
+        animation: rotate 15s linear infinite;
+    }
+
+    @keyframes rotate {
+
+        0% {
+            transform: rotate(0);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* .switch:hover */
+    .moon svg {
+        animation: tilt 5s linear infinite;
+    }
+
+    @keyframes tilt {
+
+        0% {
+            transform: rotate(0deg);
+        }
+
+        25% {
+            transform: rotate(-10deg);
+        }
+
+        75% {
+            transform: rotate(10deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    .input:checked+.slider {
+        background-color: #183153;
+    }
+
+    .input:focus+.slider {
+        box-shadow: 0 0 1px #183153;
+    }
+
+    .input:checked+.slider:before {
+        transform: translateX(30px);
+    }
+
+    @media screen and (max-width: 768px) {
+        .image-thumbnail {
+            width: 90px;
+        }
+
+        .carousel-overlay {
+            height: 40px;
+        }
+
+        .home-img {
+            height: 200px;
+        }
+
+        .view-img {
+            height: 190px;
+        }
+
+    }

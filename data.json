@@ -1,0 +1,47 @@
+{
+    "Week 1": {
+        "images": ["image1.jpg", "image2.jpg", "image3.jpg"],
+        "title": "First Week of the month",
+        "description": "Met the team and started the CSM project that was asigned to us. Our mentor conducted a meeting to discuss the project and the tasks that we need to do. They showed us around the office and introduced us to the team. We were given a tour of the office and were shown the different departments and their jobs. They actually took the time to introduce us to all the different departments. The whole experience was really informative, but more than that, it was inspiring. We felt like we were part of something big. And with the support of our new team, we were ready to roll up our sleeves and dive into the project. "
+    },
+    "Week 2": {
+        "images": ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg", "image7.jpg"],
+        "title": "Slowly Adapting to the Environment",
+        "description": "We were given our own workstations and were given access to the tools that we needed to work on the project. We were given a brief overview of the project and were given a list of tasks that we needed to do. We were also given a deadline for the project and were told that we needed to meet it."
+    },
+    "Week 3": {
+        "images": ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg"],
+        "title": "Having fun at the office",
+        "description": "Had a lot of fun in the office. We are already ahead of the project's progress. All the staffs are friendly making the office a fun place to work."
+    },
+    "Week 4": {
+        "images": ["image1.jpg", "image2.jpg", "image3.png", "image4.jpg", "image5.jpg"],
+        "title": "It's the middle of the month",
+        "description": "Went on the usual routine. I have finished a lot of graphics that is needed to be inserted in the assigned project which is the Clilentele Satisfaction Management. I also helped a bit in developing the front-end side of the system."
+    },
+    "Week 5": {
+        "images": ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"],
+        "title": "Almost done developing the system",
+        "description": "We have presented the system to our mentor if there are any changes that needs to be done. Our mentor asked for a few changes that needs to be implented quickly."
+    },
+    "Week 6": {
+        "images": ["image1.jpg", "image2.jpg", "image4.jpg", "image5.jpg"],
+        "title": "Still unfinished with some changes",
+        "description": "We are taking quite a while in revising the system."
+    },
+    "Week 7": {
+        "images": ["image1.jpeg", "image2.jpeg", "image3.jpg" ,"image4.jpg", "image5.jpg"],
+        "title": "Currently adding features",
+        "description": "We added more essential features in our system. Adding more functionality and ensuring its responsiveness."
+    },
+    "Week 8": {
+        "images": ["image1.jpg", "image2.jpg", "image3.jpg"],
+        "title": "Taking short breaks",
+        "description": "Currently testing the system and fixing the bugs that are encountered during testing."
+    },
+    "Week 9": {
+        "images": ["image1.jpeg", "image2.jpg", "image3.jpg"],
+        "title": "Back from the province",
+        "description": "After the holidays, we are back to work. We are currently fixing the bugs that are encountered during testing."
+    }
+}
