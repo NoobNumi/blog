@@ -30,7 +30,7 @@
         "description": "We are taking quite a while in revising the system."
     },
     "Week 7": {
-        "images": ["image1.jpeg", "image2.jpeg", "image3.jpg" ,"image4.jpg", "image5.jpg"],
+        "images": ["image1.jpg", "image2.jpeg", "image3.jpg" ,"image4.jpeg", "image5.jpg", "image6.jpg"],
         "title": "Currently adding features",
         "description": "We added more essential features in our system. Adding more functionality and ensuring its responsiveness."
     },

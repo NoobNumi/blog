@@ -1,11 +1,19 @@
-const modeSwitch = document.getElementById('modeSwitch');
+const modeSwitchNavbar = document.getElementById('modeSwitchNavbar');
+const modeSwitchSidebar = document.getElementById('modeSwitchSidebar');
 
-function toggleDarkMode() {
+function toggleDarkMode(isPageLoad) {
     // Get all elements with text-white and text-dark classes before toggling
     const whiteTextElements = document.querySelectorAll('.text-white');
     const darkTextElements = document.querySelectorAll('.text-dark');
     const grayTextElements = document.querySelectorAll('.text-muted');
     const litag = document.querySelectorAll('.list-group-item');
+    const sidebar = document.getElementById('mySidepanel');
+
+    // Check if dark mode is already enabled
+    const isDarkModeEnabled = document.body.classList.contains('bg-dark');
+
+    // If function is called due to page load and dark mode is already enabled, return
+    if (isPageLoad && isDarkModeEnabled) return;
 
     // Toggle dark mode classes
     document.body.classList.toggle('text-dark');
@@ -32,20 +40,35 @@ function toggleDarkMode() {
         element.classList.toggle('bg-white');
         element.classList.toggle('bg-dark');
     });
+
+    // Toggle sidebar classes
+    sidebar.classList.toggle('bg-dark');
+    sidebar.classList.toggle('bg-white');
 }
 
-// Event listener for mode switch
-modeSwitch.addEventListener('change', () => {
-    toggleDarkMode();
-    localStorage.setItem('darkMode', modeSwitch.checked);
+// Initial setup based on localStorage or default
+if (localStorage.getItem('darkMode') === 'true') {
+    toggleDarkMode(true);
+    modeSwitchNavbar.checked = true;
+    modeSwitchSidebar.checked = true;
+}
+
+
+// Event listener for navbar switch
+modeSwitchNavbar.addEventListener('change', () => {
+    toggleDarkMode(false);
+    localStorage.setItem('darkMode', modeSwitchNavbar.checked);
+});
+
+// Event listener for sidebar switch
+modeSwitchSidebar.addEventListener('change', () => {
+    toggleDarkMode(false);
+    localStorage.setItem('darkMode', modeSwitchSidebar.checked);
 });
 
 // Add event listener to the button
 var seeAllButton = document.querySelector('.see-all');
 seeAllButton.addEventListener('click', function () {
-    // Your existing code here...
-
-    // After updating the list, toggle the classes on the new li tags
     const litag = document.querySelectorAll('.list-group-item');
     litag.forEach(element => {
         if (document.body.classList.contains('bg-dark')) {
