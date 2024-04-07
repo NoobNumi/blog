@@ -74,6 +74,13 @@
         margin-right: 10px;
     }
 
+    footer,
+    .socials i,
+    .credits a,
+    .custom-white {
+        color: #ffff;
+    }
+
 
 
     .sidepanel {

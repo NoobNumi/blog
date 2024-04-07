@@ -14,7 +14,7 @@ function displayImageForWeek(weekNumber, data) {
         cardOverlay.className = "card-overlay rounded";
 
         let cardTitle = document.createElement('h5');
-        cardTitle.className = "card-title bottom-0 position-absolute";
+        cardTitle.className = "card-title bottom-0 position-absolute custom-white";
         cardTitle.textContent = 'Week ' + weekNumber;
 
         let cardImgOverlay = document.createElement('div');
@@ -22,7 +22,7 @@ function displayImageForWeek(weekNumber, data) {
         cardImgOverlay.appendChild(cardTitle);
 
         let card = document.createElement('div');
-        card.className = "card text-white position-relative rounded";
+        card.className = "card position-relative rounded";
         card.appendChild(imgElement);
         card.appendChild(cardOverlay);
         card.appendChild(cardImgOverlay);

@@ -40,7 +40,7 @@
         "description": "Currently testing the system and fixing the bugs that are encountered during testing."
     },
     "Week 9": {
-        "images": ["image1.jpeg", "image2.jpg", "image3.jpg"],
+        "images": ["image1.jpeg", "image2.jpg", "image3.jpg", "image4.jpg"],
         "title": "Back from the province",
         "description": "After the holidays, we are back to work. We are currently fixing the bugs that are encountered during testing."
     }

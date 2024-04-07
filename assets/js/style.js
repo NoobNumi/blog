@@ -1,26 +1,59 @@
 const modeSwitch = document.getElementById('modeSwitch');
+
+function toggleDarkMode() {
+    // Get all elements with text-white and text-dark classes before toggling
+    const whiteTextElements = document.querySelectorAll('.text-white');
+    const darkTextElements = document.querySelectorAll('.text-dark');
+    const grayTextElements = document.querySelectorAll('.text-muted');
+    const litag = document.querySelectorAll('.list-group-item');
+
+    // Toggle dark mode classes
+    document.body.classList.toggle('text-dark');
+    document.body.classList.toggle('bg-dark');
+    document.body.classList.toggle('text-white');
+    document.body.classList.toggle('bg-white');
+    document.body.classList.toggle('text-muted');
+
+    // Toggle text color classes
+    whiteTextElements.forEach(element => {
+        element.classList.toggle('text-dark');
+        element.classList.toggle('text-white');
+    });
+    darkTextElements.forEach(element => {
+        element.classList.toggle('text-dark');
+        element.classList.toggle('text-white');
+    });
+    grayTextElements.forEach(element => {
+        element.classList.toggle('text-muted');
+        element.classList.toggle('text-white');
+    });
+
+    litag.forEach(element => {
+        element.classList.toggle('bg-white');
+        element.classList.toggle('bg-dark');
+    });
+}
+
+// Event listener for mode switch
 modeSwitch.addEventListener('change', () => {
-    if (document.body.classList.contains('bg-dark') && document.body.classList.contains('text-white')) {
-        document.body.classList.add('text-dark');
-        document.body.classList.add('bg-white');
-        document.body.classList.remove('text-white');
-        document.body.classList.remove('bg-dark');
+    toggleDarkMode();
+    localStorage.setItem('darkMode', modeSwitch.checked);
+});
 
-        // Change text-dark to text-white
-        document.querySelectorAll('.text-dark').forEach(element => {
-            element.classList.remove('text-dark');
-            element.classList.add('text-white');
-        });
-    } else {
-        document.body.classList.add('text-white');
-        document.body.classList.add('bg-dark');
-        document.body.classList.remove('text-dark');
-        document.body.classList.remove('bg-white');
+// Add event listener to the button
+var seeAllButton = document.querySelector('.see-all');
+seeAllButton.addEventListener('click', function () {
+    // Your existing code here...
 
-        // Change text-white to text-dark
-        document.querySelectorAll('.text-white').forEach(element => {
-            element.classList.remove('text-white');
-            element.classList.add('text-dark');
-        });
-    }
+    // After updating the list, toggle the classes on the new li tags
+    const litag = document.querySelectorAll('.list-group-item');
+    litag.forEach(element => {
+        if (document.body.classList.contains('bg-dark')) {
+            element.classList.remove('bg-white');
+            element.classList.add('bg-dark');
+        } else {
+            element.classList.remove('bg-dark');
+            element.classList.add('bg-white');
+        }
+    });
 });
