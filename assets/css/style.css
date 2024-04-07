@@ -15,7 +15,19 @@
         bottom: 0;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 2;
-        display: noney;
+    }
+
+    .card-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .card-wrapper {
+        position: relative;
     }
 
     .image-thumbnail {
@@ -25,11 +37,44 @@
         object-fit: cover;
     }
 
+    .weekly-img {
+        height: 180px;
+        object-fit: cover;
+        object-position: center;
+    }
+
     .view-img {
         height: 500px;
         object-fit: cover;
         object-position: center;
     }
+
+
+    .swiper-buttons {
+        top: 40%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+
+    .btn-prev,
+    .btn-next {
+        border: none;
+        text-align: center;
+        height: 34px;
+    }
+
+    .btn-prev {
+        margin-left: 10px;
+    }
+
+    .btn-next {
+        margin-right: 10px;
+    }
+
+
 
     .sidepanel {
         width: 0;
@@ -244,6 +289,14 @@
 
         .view-img {
             height: 200px;
+        }
+
+        .btn-next {
+            margin-right: 0px;
+        }
+
+        .btn-prev {
+            margin-left: 0px;
         }
 
     }
