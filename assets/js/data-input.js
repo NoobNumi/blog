@@ -35,7 +35,7 @@ fetch('data.json')
             img.addEventListener('load', function () {
                 loadedImages++;
                 if (loadedImages === images.length) {
-                    setTimeout(addSwipeFunctionality, 1000); // Add a delay before adding swipe functionality
+                    addSwipeFunctionality();
                 }
             });
             div.appendChild(img);
@@ -63,9 +63,9 @@ function addSwipeFunctionality() {
         var touchEndX = e.changedTouches[0].clientX;
         var diffX = touchStartX - touchEndX;
         if (diffX > 0) { // swiped left
-            $('.carousel').carousel('next');
+            document.querySelector('.carousel-control-next').click();
         } else if (diffX < 0) { // swiped right
-            $('.carousel').carousel('prev');
+            document.querySelector('.carousel-control-prev').click();
         }
     });
 }

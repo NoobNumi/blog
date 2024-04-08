@@ -37,6 +37,12 @@ fetch('data.json')
             img.src = `./assets/images/Weeks/${week}/${image}`;
             img.classList.add('d-block', 'w-100', 'view-img');
 
+            img.addEventListener('load', function () {
+                if (index === weekData.images.length - 1) { // Check if it's the last image
+                    addSwipeFunctionality();
+                }
+            });
+
             carouselItem.appendChild(img);
             carouselInner.appendChild(carouselItem);
         });
@@ -46,3 +52,22 @@ fetch('data.json')
         descriptionElement.textContent = weekData.description;
     })
     .catch(error => console.error('Error:', error));
+
+function addSwipeFunctionality() {
+    var carouselInner = document.querySelector('.carousel-inner');
+    var touchStartX = null;
+
+    carouselInner.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].clientX;
+    });
+
+    carouselInner.addEventListener('touchend', function (e) {
+        var touchEndX = e.changedTouches[0].clientX;
+        var diffX = touchStartX - touchEndX;
+        if (diffX > 0) { // swiped left
+            document.querySelector('.carousel-control-next').click();
+        } else if (diffX < 0) { // swiped right
+            document.querySelector('.carousel-control-prev').click();
+        }
+    });
+}
