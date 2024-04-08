@@ -256,7 +256,7 @@
     }
 
     .carousel-item {
-        height: 600px;
+        height: 500px;
         overflow: hidden;
     }
 
@@ -413,13 +413,18 @@
             position: relative;
         }
 
-        .carousel-item,
-        .carousel-item.view-carousel {
-            height: 100%;
+        .home-img {
+            height: auto;
         }
 
+        .carousel-item,
+        .carousel-item.view-carousel {
+            height: auto;
+        }
+
+
         .view-indicators {
-            bottom: -30px;
+            bottom: -45px;
         }
     }
 
@@ -432,12 +437,9 @@
             height: 40px;
         }
 
-        .home-img {
-            height: 200px;
-        }
-
+        .home-img,
         .view-img {
-            height: 200px;
+            height: 300px;
         }
 
         .btn-next {
