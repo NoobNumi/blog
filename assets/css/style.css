@@ -37,16 +37,28 @@
         object-fit: cover;
     }
 
+
     .weekly-img {
         height: 180px;
         object-fit: cover;
         object-position: center;
     }
 
-    .view-img {
+    .carousel-item.view-carousel {
         height: 500px;
         object-fit: cover;
         object-position: center;
+    }
+
+    .view-img {
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+    }
+
+    .view-indicators {
+        bottom: -60px;
     }
 
 
@@ -243,10 +255,17 @@
         height: 24px;
     }
 
-    .home-img {
+    .carousel-item {
         height: 600px;
+        overflow: hidden;
+    }
+
+
+    .home-img {
+        max-width: 100%;
         object-fit: cover;
         object-position: center;
+        height: 100%;
     }
 
     /* .switch:hover */
@@ -394,6 +413,14 @@
             position: relative;
         }
 
+        .carousel-item,
+        .carousel-item.view-carousel {
+            height: 100%;
+        }
+
+        .view-indicators {
+            bottom: -30px;
+        }
     }
 
     @media screen and (max-width: 768px) {

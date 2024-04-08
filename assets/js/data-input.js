@@ -41,4 +41,21 @@ fetch('data.json')
         titleElement.textContent = title;
         var descriptionElement = document.querySelector('.description');
         descriptionElement.textContent = description;
+
+        // Add swipe functionality
+        var touchStartX = null;
+
+        carouselInner.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].clientX;
+        });
+
+        carouselInner.addEventListener('touchend', function (e) {
+            var touchEndX = e.changedTouches[0].clientX;
+            var diffX = touchStartX - touchEndX;
+            if (diffX > 0) { // swiped left
+                $('.carousel').carousel('next');
+            } else if (diffX < 0) { // swiped right
+                $('.carousel').carousel('prev');
+            }
+        });
     });

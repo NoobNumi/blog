@@ -28,7 +28,7 @@ fetch('data.json')
             carouselIndicators.appendChild(button);
 
             const carouselItem = document.createElement('div');
-            carouselItem.classList.add('carousel-item');
+            carouselItem.classList.add('carousel-item', 'view-carousel');
             if (index === 0) {
                 carouselItem.classList.add('active');
             }

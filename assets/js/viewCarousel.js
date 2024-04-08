@@ -7,7 +7,7 @@ function displayImageForWeek(weekNumber, data) {
         // Now we create an image element and set its source to the image URL
         let imgElement = document.createElement('img');
         imgElement.src = imageUrl;
-        imgElement.className = "card-img weekly-img";
+        imgElement.className = "card-img weekly-img w-100";
 
         // Create other elements
         let cardOverlay = document.createElement('div');
