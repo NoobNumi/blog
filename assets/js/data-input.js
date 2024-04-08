@@ -12,6 +12,8 @@ fetch('data.json')
 
         var carouselIndicators = document.querySelector('.carousel-indicators');
         var carouselInner = document.querySelector('.carousel-inner');
+        var loadedImages = 0;
+
         images.forEach(function (image, index) {
             var button = document.createElement('button');
             button.type = 'button';
@@ -30,6 +32,12 @@ fetch('data.json')
             img.className = 'd-block w-100 home-img';
             img.src = './assets/images/Weeks/' + latestWeek + '/' + image;
             img.alt = '';
+            img.addEventListener('load', function () {
+                loadedImages++;
+                if (loadedImages === images.length) {
+                    addSwipeFunctionality();
+                }
+            });
             div.appendChild(img);
             carouselInner.appendChild(div);
         });
@@ -41,21 +49,23 @@ fetch('data.json')
         titleElement.textContent = title;
         var descriptionElement = document.querySelector('.description');
         descriptionElement.textContent = description;
-
-        // Add swipe functionality
-        var touchStartX = null;
-
-        carouselInner.addEventListener('touchstart', function (e) {
-            touchStartX = e.changedTouches[0].clientX;
-        });
-
-        carouselInner.addEventListener('touchend', function (e) {
-            var touchEndX = e.changedTouches[0].clientX;
-            var diffX = touchStartX - touchEndX;
-            if (diffX > 0) { // swiped left
-                $('.carousel').carousel('next');
-            } else if (diffX < 0) { // swiped right
-                $('.carousel').carousel('prev');
-            }
-        });
     });
+
+function addSwipeFunctionality() {
+    var carouselInner = document.querySelector('.carousel-inner');
+    var touchStartX = null;
+
+    carouselInner.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].clientX;
+    });
+
+    carouselInner.addEventListener('touchend', function (e) {
+        var touchEndX = e.changedTouches[0].clientX;
+        var diffX = touchStartX - touchEndX;
+        if (diffX > 0) { // swiped left
+            $('.carousel').carousel('next');
+        } else if (diffX < 0) { // swiped right
+            $('.carousel').carousel('prev');
+        }
+    });
+}
