@@ -35,7 +35,7 @@ fetch('data.json')
             img.addEventListener('load', function () {
                 loadedImages++;
                 if (loadedImages === images.length) {
-                    addSwipeFunctionality();
+                    setTimeout(addSwipeFunctionality, 1000); // Add a delay before adding swipe functionality
                 }
             });
             div.appendChild(img);
