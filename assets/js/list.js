@@ -2,7 +2,6 @@ function generatePostHTML(data, week) {
     const words = data[week].description.split(' ').length;
     const readingTime = Math.ceil(words / 100);
 
-    // Check if dark mode is active
     const isDarkMode = document.body.classList.contains('bg-dark');
 
     return `
@@ -26,30 +25,30 @@ function generatePostHTML(data, week) {
     `;
 }
 
-
-// Fetch the data from the JSON file
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        let weeks = Object.keys(data).sort((a, b) => b.localeCompare(a));
+        let weeks = Object.keys(data).sort((a, b) => {
+            let numA = parseInt(a.replace('Week ', ''));
+            let numB = parseInt(b.replace('Week ', ''));
+            return numB - numA;
+        });
 
-        // Display the recent posts initially
         let recentWeeks = weeks.slice(1, 6);
         let html = recentWeeks.map(week => generatePostHTML(data, week)).join('');
         document.querySelector('.list-group').innerHTML = html;
 
-        // Add event listener to the button
         var seeAllButton = document.querySelector('.see-all');
         seeAllButton.addEventListener('click', function () {
             if (seeAllButton.textContent === 'See All Archives') {
-                let allWeeks = weeks.slice(1); // Exclude the very latest post
+                let allWeeks = weeks.slice(1);
                 let html = allWeeks.map(week => generatePostHTML(data, week)).join('');
-                document.querySelector('.list-group').innerHTML = html; // Replace the existing list
-                seeAllButton.textContent = 'See Less'; // Change the button text
+                document.querySelector('.list-group').innerHTML = html;
+                seeAllButton.textContent = 'See Less';
             } else {
                 let html = recentWeeks.map(week => generatePostHTML(data, week)).join('');
-                document.querySelector('.list-group').innerHTML = html; // Show only the recent posts
-                seeAllButton.textContent = 'See All Archives'; // Change the button text back
+                document.querySelector('.list-group').innerHTML = html;
+                seeAllButton.textContent = 'See All Archives';
             }
         });
     })
