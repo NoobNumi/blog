@@ -109,7 +109,16 @@
       "image7.jpg",
       "image8.jpg"
     ],
-    "title": "Attended a meeting in the office and participated in CSIT days activities",
+    "title": "CSIT days activities",
     "description": "The ICTO Director conducted a meeting on Monday about the office's activities. We finished the tasked as usual and our mentor asked us to present the system in the administrative office and they asked to add more features in the system in which we took into account. We also participated in the CSIT days activities. We had fun and enjoyed the activities. They gave us certificates fot participating in the activities."
+  },
+  "Week 13": {
+    "images": [
+      "image1.jpg",
+      "image3.jpg",
+      "image4.jpg"
+    ],
+    "title": "Applying the asked changes in the system",
+    "description": "We are currently adding the features that were asked by the administrative office. We are also fixing the bugs that were encountered during the testing of the system. Aside from the hardships in finishing the system, we are still having fun."
   }
 }
