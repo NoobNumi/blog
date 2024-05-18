@@ -120,5 +120,19 @@
     ],
     "title": "Applying the asked changes in the system",
     "description": "We are currently adding the features that were asked by the administrative office. We are also fixing the bugs that were encountered during the testing of the system. Aside from the hardships in finishing the system, we are still having fun."
+  },
+  "Week 14": {
+    "images": [
+      "image1.jpg",
+      "image2.jpg",
+      "image3.jpg",
+      "image4.jpg",
+      "image5.jpg",
+      "image6.jpg", 
+      "image7.jpg",
+      "image8.jpg"  
+    ],
+    "title": "OJT completed",
+    "description": "After countless of testing, debugging, and revising the system, we have finally completed it and its ready to be turned over to the maintainer. The offices are now able to use the system. We are happy that we have finished the system and we are proud of what we have accomplished. We are grateful for the opportunity to work with the ICTO team and we are looking forward to the next chapter of our lives."
   }
 }
